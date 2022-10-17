@@ -12,6 +12,7 @@ class Cursant(Base):
     prenume = Column(String)
     dataNasterii = Column(Date)
 
+
     def __int__(self, idCursant, nume, prenume, dataNasterii):
         self.idCursant = idCursant
         self.nume = nume

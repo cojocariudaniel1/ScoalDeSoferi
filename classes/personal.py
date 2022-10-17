@@ -7,11 +7,12 @@ class Personal(Base):
     __tablename__ = 'personal'
 
     id = Column(Integer, primary_key=True)
-    idPersonal = Column(String)
     nume = Column(String)
     prenume = Column(String)
+    cont = relationship("Cont", back_populates="personal")
+    cont_id = Column(Integer, ForeignKey("cont.id"))
+    instructor = relationship("Instructor", back_populates="personal")
 
-    def __init__(self, idPersonal, nume, prenume):
-        self.idPersonal = idPersonal
+    def __init__(self, nume, prenume):
         self.nume = nume
         self.prenume = prenume

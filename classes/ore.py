@@ -4,12 +4,11 @@ from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 
 
 class CursOreConuds(Base):
-    __tablename__ = 'curs_orecondus'
+    __tablename__ = 'ore'
 
     id = Column(Integer, primary_key=True)
-    idInstructor = Column(String)
-    idCursant = Column(String)
-    idVehicvul = Column(String)
+    Instructor = Column(String)
+    cursant = Column(String)
     durata = Column(String)
 
     def __int__(self, durata):
