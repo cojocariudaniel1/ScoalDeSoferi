@@ -13,7 +13,4 @@ class Instructor(Base):
     vehicul_id = Column(Integer, ForeignKey("vehicul.id"))
     cont = relationship("Cont", back_populates="instructor")
     cont_id = Column(Integer, ForeignKey("cont.id"))
-    #
-    # def __init__(self,id):
-    #     self.id = id
-
+    pachet_ore = relationship("PachetOre", back_populates="instructor")

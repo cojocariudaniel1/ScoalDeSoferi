@@ -7,14 +7,14 @@ class Cursant(Base):
     __tablename__ = 'cursant'
 
     id = Column(Integer, primary_key=True)
-    idCursant = Column(String)
     nume = Column(String)
     prenume = Column(String)
     dataNasterii = Column(Date)
+    cont = relationship("Cont", back_populates="cursant")
+    cont_id = Column(Integer, ForeignKey("cont.id"))
 
 
-    def __int__(self, idCursant, nume, prenume, dataNasterii):
-        self.idCursant = idCursant
+    def __init__(self, nume, prenume, dataNasterii):
         self.nume = nume
         self.prenume = prenume
         self.dataNasterii = dataNasterii

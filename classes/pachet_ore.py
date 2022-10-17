@@ -3,13 +3,13 @@ from base import Base
 from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 
 
-class CursOreConuds(Base):
-    __tablename__ = 'ore'
+class PachetOre(Base):
+    __tablename__ = 'pachet_ore'
 
     id = Column(Integer, primary_key=True)
-    Instructor = Column(String)
-    cursant = Column(String)
     durata = Column(String)
+    instructor_id = Column(Integer, ForeignKey("instructor.id"))
+    instructor = relationship("Instructor", back_populates="pachet_ore")
 
-    def __int__(self, durata):
+    def __init__(self, durata):
         self.durata = durata
