@@ -10,13 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from model.user_account_form.default_get_info import get_info
 
-
-class UserForm(object):
-    def __init__(self, username):
-        self.username = username
-
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(871, 607)
@@ -211,18 +206,9 @@ class UserForm(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        ###
-        #Setare titlu username
-        self.user_name_account_s.setText(self.username)
-        #Setare date defaul
-        nume_prenume_dataNasterii = get_info(self.username)
-        self.nume_s.setText(nume_prenume_dataNasterii[0])
-        self.prenume_s.setText(nume_prenume_dataNasterii[1])
-        self.dataNasterii_s.setText(str(nume_prenume_dataNasterii[2]))
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("Account", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.user_name_account_s.setText(_translate("MainWindow", "user_name_account"))
         self.nume_s.setText(_translate("MainWindow", "NULL"))
         self.prenume_s.setText(_translate("MainWindow", "NULL"))
@@ -238,3 +224,13 @@ class UserForm(object):
         self.ore_disponibile_label.setText(_translate("MainWindow", "Ore disponibile"))
         self.ore_finalizate_label.setText(_translate("MainWindow", "Ore finalizate"))
 
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
