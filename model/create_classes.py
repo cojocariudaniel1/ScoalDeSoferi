@@ -5,6 +5,7 @@ from instructor import Instructor
 from pachet_ore import PachetOre
 
 from personal import Personal
+from personal_administrativ import PersonalAdministrativ
 from sediu import Sediu
 from address import Address
 from vehicul import Vehicul
@@ -16,6 +17,11 @@ def adaugare_instructor(instructor, cont, vehicul, personal):
     instructor.personal = personal
     return instructor
 
+def adaugare_personal_administrativ(personal_adm, cont, personal):
+    personal_adm.cont = cont
+    personal_adm.personal = personal
+
+    return personal_adm
 
 def create_all():
     session = Session()
@@ -81,6 +87,9 @@ def create_all():
     sediu4.address = adress4
     sediu5.address = adress5
 
+    personal_adm_cont = Cont("adm1", "parola_adm", 2)
+    personal_adm1 = adaugare_personal_administrativ(PersonalAdministrativ(),personal_adm_cont, personal5)
+
     # Commit values:
     session.add_all([
         sediu1, sediu2, sediu4, sediu5, sediu3,
@@ -92,6 +101,8 @@ def create_all():
         instructor1, instructor3, instructor2,
 
         pachet_ore1,
+
+        personal_adm_cont,
 
         cursant1]
 

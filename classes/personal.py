@@ -12,6 +12,7 @@ class Personal(Base):
     cont = relationship("Cont", back_populates="personal")
     cont_id = Column(Integer, ForeignKey("cont.id"))
     instructor = relationship("Instructor", back_populates="personal")
+    personaladministrativ = relationship("PersonalAdministrativ", back_populates="personal")
 
     def __init__(self, nume, prenume):
         self.nume = nume
