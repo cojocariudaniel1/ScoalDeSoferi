@@ -13,7 +13,6 @@ class Cursant(Base):
     cont = relationship("Cont", back_populates="cursant")
     cont_id = Column(Integer, ForeignKey("cont.id"))
 
-
     def __init__(self, nume, prenume, dataNasterii):
         self.nume = nume
         self.prenume = prenume

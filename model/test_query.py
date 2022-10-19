@@ -8,14 +8,20 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 from base import Session, Base, engine
-
+from cont import Cont
+from instructor import Instructor
 from personal import Personal
 from sediu import Sediu
 from address import Address
+from cursant import Cursant
+from vehicul import Vehicul
+from pachet_ore import PachetOre
 
 def query():
     session = Session()
-    result = session.execute(select(Sediu).where(Sediu.id == 1))
+    query = session.query(Cont)
+    for row in query:
+        print(row.user)
     session.commit()
     session.close()
 query()

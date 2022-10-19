@@ -1,1 +1,1 @@
-test
+pyuic5 -x file_name.ui -o gui.py

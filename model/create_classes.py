@@ -1,11 +1,3 @@
-from datetime import date
-
-from sqlalchemy import create_engine, table
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import MetaData
-from sqlalchemy import create_engine
-from sqlalchemy.engine.url import URL
-from sqlalchemy.ext.declarative import declarative_base
 from base import Session, Base, engine
 from cont import Cont
 from cursant import Cursant
@@ -16,7 +8,6 @@ from personal import Personal
 from sediu import Sediu
 from address import Address
 from vehicul import Vehicul
-from delete_database import delete_db
 
 
 def adaugare_instructor(instructor, cont, vehicul, personal):
@@ -67,8 +58,7 @@ def create_all():
     instructor_cont3 = Cont("user_inst3", "parola3", 1)
 
     # Creare instructori respectivi | Cont instructor, Vehicul, Personal respectiv
-    instructor1 = Instructor()
-    instructor1 = adaugare_instructor(instructor1, instructor_cont1, vehicul1, personal1)
+    instructor1 = adaugare_instructor(Instructor(), instructor_cont1, vehicul1, personal1)
     instructor2 = adaugare_instructor(Instructor(), instructor_cont2, vehicul2, personal2)
     instructor3 = adaugare_instructor(Instructor(), instructor_cont3, vehicul3, personal3)
 
