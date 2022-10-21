@@ -36,12 +36,16 @@ def create_all():
     sediu4 = Sediu(1234, "xxxx@gmail.com")
     sediu5 = Sediu(1234, "xxxx@gmail.com")
 
+
     # Address | Strada, oras, tara, cod postal, Judet
     adress1 = Address('Strada1', 'Oras1', 'Tara1,', 1231, 'Judet1')
     adress2 = Address('Strada2', 'Oras2', 'Tara1,', 1232, 'Judet1')
     adress3 = Address('Strada3', 'Oras3', 'Tara1,', 1233, 'Judet2')
     adress4 = Address('Strada4', 'Oras4', 'Tara1,', 1234, 'Judet2')
     adress5 = Address('Strada5', 'Oras5', 'Tara1,', 1235, 'Judet3')
+
+
+
 
     # Personal | Nume, prenume
     personal1 = Personal("Nume1", "Prenume1")
@@ -69,12 +73,15 @@ def create_all():
     instructor3 = adaugare_instructor(Instructor(), instructor_cont3, vehicul3, personal3)
 
     # Creare pachet_ore
-    pachet_ore1 = PachetOre("30")
+    pachet_ore1 = PachetOre(30)
+    pachet_ore2 = PachetOre(15)
     pachet_ore1.instructor_id = 1
+    pachet_ore2.instructor_id = 2
 
     # Creare Cursant:
     cursant1 = Cursant("Nume1", "Prenume1", "10/10/2001")
     cursant1.cont = Cont("user1", "parola1", 0)
+
 
     # Adaugare personal in sediu.
     sediu1.personal = [personal1, personal3]
@@ -100,7 +107,7 @@ def create_all():
 
         instructor1, instructor3, instructor2,
 
-        pachet_ore1,
+        pachet_ore1, pachet_ore2,
 
         personal_adm_cont,
 

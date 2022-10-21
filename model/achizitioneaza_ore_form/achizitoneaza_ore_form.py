@@ -11,7 +11,7 @@ from address import Address
 from cursant import Cursant
 from vehicul import Vehicul
 from pachet_ore import PachetOre
-
+from personal_administrativ import PersonalAdministrativ
 from base import Session
 from cont import Cont
 from views.achizitonare_ore_view import Ui_MainWindow

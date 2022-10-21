@@ -1,5 +1,6 @@
 from datetime import date
 from sqlalchemy import select
+from personal_administrativ import PersonalAdministrativ
 
 from sqlalchemy import create_engine, table
 from sqlalchemy.orm import sessionmaker
@@ -21,7 +22,8 @@ def query():
     session = Session()
     query = session.query(Cont)
     for row in query:
-        print(row.user)
+        print(f"Username : {row.user}, Parola: {row.parola}")
     session.commit()
     session.close()
+
 query()

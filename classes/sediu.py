@@ -14,6 +14,7 @@ class Sediu(Base):
     id = Column(Integer, primary_key=True)
     numarTelefon = Column(Integer)
     emailAddress = Column(String)
+
     address = relationship("Address", back_populates="sediu")
     address_id = Column(Integer, ForeignKey("address.id"))
     personal = relationship('Personal', secondary=personal_relationship)

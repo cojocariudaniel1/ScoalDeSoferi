@@ -10,6 +10,9 @@ class Cursant(Base):
     nume = Column(String)
     prenume = Column(String)
     dataNasterii = Column(Date)
+    pachet_ore = relationship("PachetOre")
+    pachet_ore_id = Column(Integer, ForeignKey("pachet_ore.id"))
+    nr_ore = Column(Integer)
     cont = relationship("Cont", back_populates="cursant")
     cont_id = Column(Integer, ForeignKey("cont.id"))
 
