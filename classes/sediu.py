@@ -6,6 +6,7 @@ from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 class Sediu(Base):
     __tablename__ = 'sediu'
 
+    #Many To Many
     personal_relationship = Table('personal_relationship', Base.metadata,
                                   Column('personal_id', Integer, ForeignKey('personal.id')),
                                   Column('sediu_id', Integer, ForeignKey('sediu.id')),

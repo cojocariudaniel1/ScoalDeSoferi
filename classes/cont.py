@@ -10,10 +10,15 @@ class Cont(Base):
     user = Column(String)
     parola = Column(String)
     nivel_cont = Column(Integer)  # Nivel 1 - User, 2 - Instructor, 3 - Administrator
-    personal = relationship("Personal", back_populates="cont")
-    instructor = relationship("Instructor", back_populates="cont")
-    cursant = relationship("Cursant", back_populates="cont")
-    personaladministrativ = relationship("PersonalAdministrativ", back_populates="cont")
+
+    # One To One
+    personal = relationship("Personal", back_populates="cont", uselist=False)
+    # One To One
+    instructor = relationship("Instructor", back_populates="cont", uselist=False)
+    # One To One
+    cursant = relationship("Cursant", back_populates="cont", uselist=False)
+    # One To One
+    personaladministrativ = relationship("PersonalAdministrativ", back_populates="cont", uselist=False)
 
     def __init__(self, user, parola, nivel_cont):
         self.user = user

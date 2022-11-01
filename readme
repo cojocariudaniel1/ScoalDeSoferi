@@ -1,1 +1,4 @@
 pyuic5 -x file_name.ui -o gui.py
+
+1. Modificare clasa vehicul ( adaugare var Nr de inmatriculare ex: "TFM 358")
+2. Modificare clasa vehicul ( adaugare cutie de viteza manuala sau automata var)

@@ -9,9 +9,13 @@ class Vehicul(Base):
     marca = Column(String)
     model = Column(String)
     anFabricatie = Column(String)
+    cutie_de_viteze = Column(String)
+    numar_de_inmatriculare = Column(String)
     instructor = relationship("Instructor", back_populates="vehicul")
 
-    def __init__(self, marca, model, anFabricatie):
+    def __init__(self, marca, model, anFabricatie, cutie_de_viteze, numar_de_inmatriculare):
         self.marca = marca
         self.model = model
         self.anFabricatie = anFabricatie
+        self.cutie_de_viteze = cutie_de_viteze
+        self.numar_de_inmatriculare = numar_de_inmatriculare

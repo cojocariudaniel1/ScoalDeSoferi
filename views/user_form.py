@@ -32,7 +32,7 @@ class Ui_MainWindow(object):
         font.setWeight(10)
         self.user_name_account_s.setFont(font)
         self.user_name_account_s.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 87 24pt \"Arial Black\";")
+                                               "font: 87 24pt \"Arial Black\";")
         self.user_name_account_s.setAlignment(QtCore.Qt.AlignCenter)
         self.user_name_account_s.setWordWrap(True)
         self.user_name_account_s.setObjectName("user_name_account_s")
@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.nume_s.setFont(font)
         self.nume_s.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                  "font: 18pt \"MS Shell Dlg 2\";")
         self.nume_s.setObjectName("nume_s")
         self.verticalLayout_2.addWidget(self.nume_s)
         self.prenume_s = QtWidgets.QLabel(self.layoutWidget)
@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.prenume_s.setFont(font)
         self.prenume_s.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                     "font: 18pt \"MS Shell Dlg 2\";")
         self.prenume_s.setObjectName("prenume_s")
         self.verticalLayout_2.addWidget(self.prenume_s)
         self.dataNasterii_s = QtWidgets.QLabel(self.layoutWidget)
@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.dataNasterii_s.setFont(font)
         self.dataNasterii_s.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                          "font: 18pt \"MS Shell Dlg 2\";")
         self.dataNasterii_s.setObjectName("dataNasterii_s")
         self.verticalLayout_2.addWidget(self.dataNasterii_s)
         self.oreDisponibile_s = QtWidgets.QLabel(self.layoutWidget)
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.oreDisponibile_s.setFont(font)
         self.oreDisponibile_s.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                            "font: 18pt \"MS Shell Dlg 2\";")
         self.oreDisponibile_s.setObjectName("oreDisponibile_s")
         self.verticalLayout_2.addWidget(self.oreDisponibile_s)
         self.label_10 = QtWidgets.QLabel(self.layoutWidget)
@@ -99,7 +99,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_10.setFont(font)
         self.label_10.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                    "font: 18pt \"MS Shell Dlg 2\";")
         self.label_10.setObjectName("label_10")
         self.verticalLayout_2.addWidget(self.label_10)
         self.line = QtWidgets.QFrame(self.centralwidget)
@@ -118,30 +118,30 @@ class Ui_MainWindow(object):
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
         self.editeaza_cont_button = QtWidgets.QPushButton(self.centralwidget)
-        self.editeaza_cont_button.setGeometry(QtCore.QRect(330, 500, 241, 61))
+        self.editeaza_cont_button.setGeometry(QtCore.QRect(40, 500, 241, 61))
         self.editeaza_cont_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
+                                                "font: 16pt \"Arial\";\n"
+                                                "")
         self.editeaza_cont_button.setObjectName("editeaza_cont_button")
         self.achizitioneaza_ore_button = QtWidgets.QPushButton(self.centralwidget)
-        self.achizitioneaza_ore_button.setGeometry(QtCore.QRect(10, 460, 251, 61))
+        self.achizitioneaza_ore_button.setGeometry(QtCore.QRect(350, 500, 251, 61))
         self.achizitioneaza_ore_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
+                                                     "font: 16pt \"Arial\";\n"
+                                                     "")
         self.achizitioneaza_ore_button.setObjectName("achizitioneaza_ore_button")
         self.log_out = QtWidgets.QPushButton(self.centralwidget)
         self.log_out.setGeometry(QtCore.QRect(660, 500, 141, 61))
         self.log_out.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
+                                   "font: 16pt \"Arial\";\n"
+                                   "")
         self.log_out.setObjectName("log_out")
-        self.layoutWidget1 = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget1.setGeometry(QtCore.QRect(70, 150, 271, 260))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget1)
+        self.widget = QtWidgets.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(70, 150, 271, 260))
+        self.widget.setObjectName("widget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.nume_label = QtWidgets.QLabel(self.layoutWidget1)
+        self.nume_label = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(18)
@@ -150,10 +150,10 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.nume_label.setFont(font)
         self.nume_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                      "font: 18pt \"MS Shell Dlg 2\";")
         self.nume_label.setObjectName("nume_label")
         self.verticalLayout.addWidget(self.nume_label)
-        self.prenume_label = QtWidgets.QLabel(self.layoutWidget1)
+        self.prenume_label = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(18)
@@ -162,10 +162,10 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.prenume_label.setFont(font)
         self.prenume_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                         "font: 18pt \"MS Shell Dlg 2\";")
         self.prenume_label.setObjectName("prenume_label")
         self.verticalLayout.addWidget(self.prenume_label)
-        self.data_nasterii_label = QtWidgets.QLabel(self.layoutWidget1)
+        self.data_nasterii_label = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(18)
@@ -174,10 +174,10 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.data_nasterii_label.setFont(font)
         self.data_nasterii_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                               "font: 18pt \"MS Shell Dlg 2\";")
         self.data_nasterii_label.setObjectName("data_nasterii_label")
         self.verticalLayout.addWidget(self.data_nasterii_label)
-        self.ore_disponibile_label = QtWidgets.QLabel(self.layoutWidget1)
+        self.ore_disponibile_label = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(18)
@@ -186,10 +186,10 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.ore_disponibile_label.setFont(font)
         self.ore_disponibile_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                                 "font: 18pt \"MS Shell Dlg 2\";")
         self.ore_disponibile_label.setObjectName("ore_disponibile_label")
         self.verticalLayout.addWidget(self.ore_disponibile_label)
-        self.ore_finalizate_label = QtWidgets.QLabel(self.layoutWidget1)
+        self.ore_finalizate_label = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(18)
@@ -198,15 +198,9 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.ore_finalizate_label.setFont(font)
         self.ore_finalizate_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\";")
+                                                "font: 18pt \"MS Shell Dlg 2\";")
         self.ore_finalizate_label.setObjectName("ore_finalizate_label")
         self.verticalLayout.addWidget(self.ore_finalizate_label)
-        self.programare_button = QtWidgets.QPushButton(self.centralwidget)
-        self.programare_button.setGeometry(QtCore.QRect(10, 530, 251, 61))
-        self.programare_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.programare_button.setObjectName("programare_button")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -229,11 +223,11 @@ class Ui_MainWindow(object):
         self.data_nasterii_label.setText(_translate("MainWindow", "Data nașterii"))
         self.ore_disponibile_label.setText(_translate("MainWindow", "Ore disponibile"))
         self.ore_finalizate_label.setText(_translate("MainWindow", "Ore finalizate"))
-        self.programare_button.setText(_translate("MainWindow", "Programare"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

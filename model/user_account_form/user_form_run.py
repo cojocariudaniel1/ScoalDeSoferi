@@ -1,5 +1,11 @@
+import sys
+from time import strftime
+import time
+
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
+from PyQt5 import QtGui
+
 from base import Session
 from sqlalchemy import select
 
@@ -12,7 +18,6 @@ from cursant import Cursant
 from vehicul import Vehicul
 from pachet_ore import PachetOre
 from personal_administrativ import PersonalAdministrativ
-
 from base import Session
 from cont import Cont
 from views.cont_form_view import Ui_MainWindow as ContForm
@@ -22,20 +27,42 @@ from model.achizitioneaza_ore_form.achizitoneaza_ore_form import AchizitoneazaOr
 class ContWindow(QtWidgets.QMainWindow):
     def __init__(self, username = None):
         super().__init__()
+        self.ore = 0
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.Time)
+        self.timer.start(1000)
 
         self.new_window = None
         self.UI = ContForm()
         self.UI.setupUi(self)
-
         self.username = username
+        self.cursant_id = None
         self.get_info(self.username)
 
         self.UI.achizitioneaza_ore_button.clicked.connect(self.achizitoneaza_ore_form)
+        self.UI.log_out.clicked.connect(self.log_out)
+
+    def log_out(self):
+        sys.exit()
+
+    def Time(self):
+        if int(strftime("%S")) % 10 == 0:
+            self.timer.setInterval(1000)
+        else:
+            self.timer.setInterval(1000)
+        self.get_info(self.username)
+
+        if self.ore == 0:
+            self.UI.achizitioneaza_ore_button.setDisabled(False)
+        else:
+            self.UI.achizitioneaza_ore_button.setDisabled(True)
+
+
 
     def achizitoneaza_ore_form(self):
-        ContWindow.hide(self)
-        self.new_window = AchizitoneazaOreWindow()
+        self.new_window = AchizitoneazaOreWindow(self.cursant_id, self.username)
         self.new_window.show()
+        self.get_info(self.username)
 
     def get_info(self, username):
         session = Session()
@@ -46,9 +73,15 @@ class ContWindow(QtWidgets.QMainWindow):
                 for item in cursant_query:
                     pass
                     try:
+                        self.cursant_id = item.id
                         self.UI.nume_s.setText(item.nume)
                         self.UI.prenume_s.setText(item.prenume)
                         self.UI.dataNasterii_s.setText(str(item.dataNasterii))
+                        self.UI.oreDisponibile_s.setText(str(item.nr_ore))
+                        self.UI.label_10.setText(str(item.ore_finalizate))
+                        self.UI.user_name_account_s.setText(str(cont.user.upper()))
+
+                        self.ore = int(item.nr_ore)
                     except Exception as e:
                         print(e)
             elif cont.nivel_cont == 1:

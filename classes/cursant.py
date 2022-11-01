@@ -12,12 +12,16 @@ class Cursant(Base):
     dataNasterii = Column(Date)
     pachet_ore = relationship("PachetOre")
     pachet_ore_id = Column(Integer, ForeignKey("pachet_ore.id"))
+    instructor = relationship("Instructor")
+    instructor_id = Column(Integer, ForeignKey("instructor.id"))
     nr_ore = Column(Integer)
     ore_finalizate = Column(Integer)
+
+    #One To One
     cont = relationship("Cont", back_populates="cursant")
     cont_id = Column(Integer, ForeignKey("cont.id"))
 
-    def __init__(self, nume, prenume, dataNasterii, nr_ore = 0, ore_finalizate=0):
+    def __init__(self, nume, prenume, dataNasterii, nr_ore=0, ore_finalizate=0):
         self.nume = nume
         self.prenume = prenume
         self.dataNasterii = dataNasterii
