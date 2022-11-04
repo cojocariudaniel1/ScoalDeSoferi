@@ -17,7 +17,8 @@ class Cursant(Base):
     nr_ore = Column(Integer)
     ore_finalizate = Column(Integer)
 
-    #One To One
+    programare = relationship("Programare")
+    # One To One
     cont = relationship("Cont", back_populates="cursant")
     cont_id = Column(Integer, ForeignKey("cont.id"))
 

@@ -19,6 +19,7 @@ from cont import Cont
 from views.achizitionare_ore import Ui_MainWindow
 from PyQt5.QtCore import Qt, pyqtSignal
 
+
 class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
     def __init__(self, cursant_id, username):
         super().__init__()
@@ -40,7 +41,6 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
 
         self.filter_list = []
 
-
     def achizitoneaza_buton(self):
         try:
             nume_prenume = self.table_row[0].split()
@@ -57,7 +57,7 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
             for row in pachet_ore_relation_ship:
                 if row[0] == instructor.id:
                     update_pachet_ore = update(Cursant).where(Cursant.id == self.cursant_id).values(
-                        pachet_ore_id=row[1], nr_ore = pachet_ore, instructor_id=instructor.id)
+                        pachet_ore_id=row[1], nr_ore=pachet_ore, instructor_id=instructor.id)
                     session.execute(update_pachet_ore)
                     session.commit()
                     session.close()

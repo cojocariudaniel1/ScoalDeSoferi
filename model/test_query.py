@@ -78,4 +78,8 @@ def test():
             another_list.append(row)
     print(another_list)
 
-test()
+def test4():
+    k = 1000001111
+    print(len(str(k)))
+
+test4()

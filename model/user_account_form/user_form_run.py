@@ -10,6 +10,7 @@ from base import Session
 from sqlalchemy import select
 
 from cont import Cont
+from model.programare_form.programare_form_run import ProgramareWindow
 from personal import Personal
 from instructor import Instructor
 from sediu import Sediu
@@ -40,6 +41,7 @@ class ContWindow(QtWidgets.QMainWindow):
         self.get_info(self.username)
 
         self.UI.achizitioneaza_ore_button.clicked.connect(self.achizitoneaza_ore_form)
+        self.UI.programare_button.clicked.connect(self.programare_form)
         self.UI.log_out.clicked.connect(self.log_out)
 
     def log_out(self):
@@ -51,12 +53,26 @@ class ContWindow(QtWidgets.QMainWindow):
         else:
             self.timer.setInterval(1000)
         self.get_info(self.username)
+        try:
 
+            if int(self.UI.oreDisponibile_s.text()) != 0:
+                self.UI.programare_button.setDisabled(False)
+            else:
+                self.UI.programare_button.setDisabled(True)
+        except Exception as e:
+            print(e)
         if self.ore == 0:
             self.UI.achizitioneaza_ore_button.setDisabled(False)
         else:
             self.UI.achizitioneaza_ore_button.setDisabled(True)
 
+
+    def programare_form(self):
+        try:
+            self.new_window = ProgramareWindow(self.username)
+            self.new_window.show()
+        except Exception as e:
+            print(e)
 
 
     def achizitoneaza_ore_form(self):

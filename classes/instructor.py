@@ -15,3 +15,4 @@ class Instructor(Base):
     vehicul_id = Column(Integer, ForeignKey("vehicul.id"))
     cont = relationship("Cont", back_populates="instructor")
     cont_id = Column(Integer, ForeignKey("cont.id"))
+    programare = relationship("Programare")
