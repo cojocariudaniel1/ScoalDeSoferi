@@ -11,6 +11,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from base import Session, Base, engine
 from cont import Cont
 from instructor import Instructor
+from programare import Programare
 from personal import Personal
 from sediu import Sediu
 from address import Address
@@ -79,7 +80,12 @@ def test():
     print(another_list)
 
 def test4():
-    k = 1000001111
-    print(len(str(k)))
+    session = Session()
+    query = session.query(Sediu)
+    for i in query:
+        print(i.email)
+    session.commit()
+    session.close()
+
 
 test4()

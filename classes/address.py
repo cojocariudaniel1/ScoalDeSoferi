@@ -21,7 +21,7 @@ class Address(Base):
     @validates("cod_postal")
     def validate_codPostal(self, key, cod_postal):
         if len(str(cod_postal)) != 6:
-            raise ValueError("failed simple email validation")
+            raise ValueError("Codul postal nu este corect")
         return cod_postal
 
     def __init__(self, strada, oras, tara, cod_postal, judet):

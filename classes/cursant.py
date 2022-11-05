@@ -1,4 +1,4 @@
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, validates
 from base import Base
 from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 
@@ -28,3 +28,5 @@ class Cursant(Base):
         self.dataNasterii = dataNasterii
         self.ore_finalizate = ore_finalizate
         self.nr_ore = nr_ore
+
+

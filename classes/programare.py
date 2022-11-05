@@ -1,4 +1,4 @@
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, validates
 from base import Base
 from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 
@@ -17,3 +17,12 @@ class Programare(Base):
     def __init__(self, data, ora=None):
         self.data = data
         self.ora = ora
+
+    @validates("ora")
+    def validate_ora(self, key, ora):
+        if ora is not None:
+            if ora > 16:
+                raise ValueError("Ora programata este peste program")
+            if (ora % 2) != 0:
+                raise ValueError("Ora programata este gresita")
+            return ora

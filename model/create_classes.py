@@ -174,7 +174,7 @@ def create_all_function():
     programare7.cursant = cursant7
     programare7.instructor = instructor3
 
-    programare8 = Programare("2022-11-02", 10)
+    programare8 = Programare("2022-11-02", 12)
     programare8.cursant = cursant8
     programare8.instructor = instructor1
 
