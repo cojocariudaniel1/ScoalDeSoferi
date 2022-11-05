@@ -64,9 +64,6 @@ def unitest1():
           f"la addresa {adress_alexandru.strada}")
     # Adaugarea datelo in db
     session.add(sediu_alexandru)
-    session.add(personal_alexandru2)
-    session.add(personal_alexandru1)
-    session.add(adress_alexandru)
     session.commit()
     session.close()
 
