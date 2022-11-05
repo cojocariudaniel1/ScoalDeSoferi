@@ -2,7 +2,7 @@ from sqlalchemy.orm import relationship, validates
 from base import Base
 from sqlalchemy import Column, String, Integer, Date, Table, ForeignKey
 
-
+#Column (Atribut de tip coloana)
 class Address(Base):
     __tablename__ = 'address'
 
@@ -13,7 +13,7 @@ class Address(Base):
     cod_postal = Column(Integer)
     judet = Column(String)
 
-    # One to One
+    # One to One relationship
     sediu = relationship("Sediu", back_populates="address", uselist=False)
 
 
@@ -24,6 +24,7 @@ class Address(Base):
             raise ValueError("Codul postal nu este corect")
         return cod_postal
 
+    #setare getters & setters
     def __init__(self, strada, oras, tara, cod_postal, judet):
         self.strada = strada
         self.oras = oras

@@ -18,10 +18,13 @@ class Cursant(Base):
     ore_finalizate = Column(Integer)
 
     programare = relationship("Programare")
+    # Atributul back_populates este folosit pentru ca engine-ul sa inteleaga ca este o relatie si sa
+    # populeze automatat clasa copil cand clasa parinte este creata.
     # One To One
     cont = relationship("Cont", back_populates="cursant")
     cont_id = Column(Integer, ForeignKey("cont.id"))
 
+    #setare getters & setters
     def __init__(self, nume, prenume, dataNasterii, nr_ore=0, ore_finalizate=0):
         self.nume = nume
         self.prenume = prenume

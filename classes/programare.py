@@ -9,11 +9,14 @@ class Programare(Base):
     id = Column(Integer, primary_key=True)
     data = Column(Date)
     ora = Column(Integer)
+    # Atributul back_populates este folosit pentru ca engine-ul sa inteleaga ca este o relatie si sa
+    # populeze automatat clasa copil cand clasa parinte este creata.
     cursant = relationship("Cursant", back_populates="programare")
     cursant_id = Column(Integer, ForeignKey("cursant.id"))
     instructor = relationship("Instructor", back_populates="programare")
     instructor_id = Column(Integer, ForeignKey("instructor.id"))
 
+    #setare getters & setters
     def __init__(self, data, ora=None):
         self.data = data
         self.ora = ora

@@ -26,19 +26,20 @@ from model.achizitioneaza_ore_form.achizitoneaza_ore_form import AchizitoneazaOr
 
 
 class ContWindow(QtWidgets.QMainWindow):
-    def __init__(self, username = None):
+    def __init__(self, username=""):
         super().__init__()
         self.ore = 0
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.Time)
         self.timer.start(1000)
-
         self.new_window = None
         self.UI = ContForm()
         self.UI.setupUi(self)
         self.username = username
-        self.cursant_id = None
         self.get_info(self.username)
+
+        self.cursant_id = None
+
 
         self.UI.achizitioneaza_ore_button.clicked.connect(self.achizitoneaza_ore_form)
         self.UI.programare_button.clicked.connect(self.programare_form)
@@ -54,18 +55,20 @@ class ContWindow(QtWidgets.QMainWindow):
             self.timer.setInterval(1000)
         self.get_info(self.username)
         try:
-
-            if int(self.UI.oreDisponibile_s.text()) != 0:
-                self.UI.programare_button.setDisabled(False)
-            else:
-                self.UI.programare_button.setDisabled(True)
+            pass
+            # if int(self.UI.oreDisponibile_s.text()):
+            #     print('test')
+            # if int(self.UI.oreDisponibile_s.text()) != 0:
+            #     self.UI.programare_button.setDisabled(False)
+            # else:
+            #     self.UI.programare_button.setDisabled(True)
         except Exception as e:
             print(e)
+            print(type(self.UI.oreDisponibile_s.text()))
         if self.ore == 0:
             self.UI.achizitioneaza_ore_button.setDisabled(False)
         else:
             self.UI.achizitioneaza_ore_button.setDisabled(True)
-
 
     def programare_form(self):
         try:
@@ -73,7 +76,6 @@ class ContWindow(QtWidgets.QMainWindow):
             self.new_window.show()
         except Exception as e:
             print(e)
-
 
     def achizitoneaza_ore_form(self):
         self.new_window = AchizitoneazaOreWindow(self.cursant_id, self.username)
@@ -87,7 +89,6 @@ class ContWindow(QtWidgets.QMainWindow):
             if cont.nivel_cont == 0:
                 cursant_query = session.query(Cursant).filter(Cursant.cont_id == cont.id)
                 for item in cursant_query:
-                    pass
                     try:
                         self.cursant_id = item.id
                         self.UI.nume_s.setText(item.nume)

@@ -33,12 +33,13 @@ def create_all_function():
     Base.metadata.create_all(engine)
 
     # Sediu | Numar telefon, Email address
-
+    #Creare clase cu datele respective
     sediu_alexandru = Sediu('0230562526', 'dsrp.alexandru@gmail.com')
     sediu_pacurari = Sediu('0230585642', 'dsrp.pacurari@gmail.com')
     sediu_nicolina = Sediu('0230568569', 'dsrp.nicolina@gmail.com')
     sediu_copou = Sediu('0758598698', 'dsrp.copou@gmail.com')
 
+    #Creare clase cu datele respective
     # Address | Strada, oras, tara, cod postal, Judet
     adress_alexandru = Address('Sos. Nationala', 'Iasi', 'Romania', 700103, 'Iasi')
     adress_pacurari = Address('Str. Luca Arbore', 'Iasi', 'Romania,', 700102, 'Iasi')
@@ -46,6 +47,7 @@ def create_all_function():
     adress_copou = Address('Str. Codrescu', 'Iasi', 'Romania', 700856, 'Iasi')
     adress5 = Address('Strada5', 'Oras5', 'Tara1,', 700857, 'Judet3')
 
+    #Creare clase cu datele respective
     # Personal | Nume, prenume
     personal_alexandru1 = Personal("Ghiata", "Anamaria")
     personal_alexandru1.cont = Cont("personal1", "parola1", 2)
@@ -74,6 +76,7 @@ def create_all_function():
     personal_copou3 = Personal("Gradinaru", "Augustin")
     personal_copou3.cont = Cont("personal9", "parola1", 2)
 
+    #Creare clase cu datele respective
     # Vehicul | Marca, model, anFabricatie, instructor.
     vehicul1 = Vehicul("Audi", "A3", "2022", "Manual", "AER 424")
     vehicul2 = Vehicul("BMW", "Seria4", "2010", "Manual", "KJL 947")
@@ -97,7 +100,6 @@ def create_all_function():
     instructor5 = adaugare_instructor(Instructor(), instructor_cont5, vehicul5, personal_copou2)
 
     # Adaugare conturi in Instructor
-
     # Creare pachet_ore
     pachet_ore1 = PachetOre(30, 200)
     pachet_ore2 = PachetOre(15, 100)
@@ -178,6 +180,7 @@ def create_all_function():
     programare8.cursant = cursant8
     programare8.instructor = instructor1
 
+    # Adaugare programari pentru un anumit instructor
     for i in range(7):
         k = Programare(f"2022-11-{i + 1}")
         k.instructor = instructor1

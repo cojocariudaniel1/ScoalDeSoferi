@@ -7,6 +7,8 @@ class Personal(Base):
     __tablename__ = 'personal'
 
     # nullable=False - Nu poate sa aiba valori null
+    # Atributul back_populates este folosit pentru ca engine-ul sa inteleaga ca este o relatie si sa
+    # populeze automatat clasa copil cand clasa parinte este creata.
     id = Column(Integer, primary_key=True)
     nume = Column(String(100), nullable=False)
     prenume = Column(String(100), nullable=False)
@@ -15,6 +17,7 @@ class Personal(Base):
     instructor = relationship("Instructor", back_populates="personal", uselist=False)
     personaladministrativ = relationship("PersonalAdministrativ", back_populates="personal", uselist=False)
 
+    #setare getters & setters
     def __init__(self, nume, prenume):
         self.nume = nume
         self.prenume = prenume

@@ -17,12 +17,13 @@ class Sediu(Base):
     numarTelefon = Column(Integer)
     emailAddress = Column(String)
     denumire_sediu = Column(String)
+    # Atributul back_populates este folosit pentru ca engine-ul sa inteleaga ca este o relatie si sa
+    # populeze automatat clasa copil cand clasa parinte este creata.
     address = relationship("Address", back_populates="sediu")
     address_id = Column(Integer, ForeignKey("address.id"))
     personal = relationship('Personal', secondary=personal_relationship)
 
-    # idPersonal = Column(String)
-
+    #setare getters & setters
     def __init__(self, numarTelefon, emailAddress, denumire_sediu = "Scoala de soferi"):
         self.numarTelefon = numarTelefon
         self.emailAddress = emailAddress
