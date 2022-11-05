@@ -29,6 +29,8 @@ class Sediu(Base):
         self.emailAddress = emailAddress
         self.denumire_sediu = denumire_sediu
 
+
+    #Modificare setters & getters
     @hybrid_property
     def email(self):
         return self.emailAddress
