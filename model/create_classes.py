@@ -152,34 +152,6 @@ def create_all_function():
     programare1.cursant = cursant1
     programare1.instructor = instructor1
 
-    programare2 = Programare("2022-11-02", 10)
-    programare2.cursant = cursant2
-    programare2.instructor = instructor2
-
-    programare3 = Programare("2022-11-03", 10)
-    programare3.cursant = cursant3
-    programare3.instructor = instructor3
-
-    programare4 = Programare("2022-11-04", 16)
-    programare4.cursant = cursant4
-    programare4.instructor = instructor4
-
-    programare5 = Programare("2022-11-04", 8)
-    programare5.cursant = cursant5
-    programare5.instructor = instructor4
-
-    programare6 = Programare("2022-11-04", 14)
-    programare6.cursant = cursant6
-    programare6.instructor = instructor5
-
-    programare7 = Programare("2022-11-05", 10)
-    programare7.cursant = cursant7
-    programare7.instructor = instructor3
-
-    programare8 = Programare("2022-11-02", 12)
-    programare8.cursant = cursant8
-    programare8.instructor = instructor1
-
     # Adaugare programari pentru un anumit instructor
     for i in range(7):
         k = Programare(f"2022-11-{i + 1}")
@@ -199,7 +171,7 @@ def create_all_function():
 
         pachet_ore1, pachet_ore2,
 
-        programare1, programare2, programare3, programare4, programare5, programare6,
+        programare1,
 
         personal_adm_cont, personal_adm1,
 

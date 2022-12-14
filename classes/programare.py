@@ -24,7 +24,7 @@ class Programare(Base):
     @validates("ora")
     def validate_ora(self, key, ora):
         if ora is not None:
-            if ora > 16:
+            if ora > 18:
                 raise ValueError("Ora programata este peste program")
             if (ora % 2) != 0:
                 raise ValueError("Ora programata este gresita")

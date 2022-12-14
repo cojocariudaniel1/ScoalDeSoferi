@@ -18,54 +18,57 @@ class Ui_Form(object):
         self.login_titlu_label = QtWidgets.QLabel(Form)
         self.login_titlu_label.setGeometry(QtCore.QRect(370, 0, 241, 121))
         self.login_titlu_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                             "font: 87 50pt \"Arial Black\";")
+"font: 87 50pt \"Arial Black\";")
         self.login_titlu_label.setAlignment(QtCore.Qt.AlignCenter)
         self.login_titlu_label.setObjectName("login_titlu_label")
         self.login_button = QtWidgets.QPushButton(Form)
         self.login_button.setGeometry(QtCore.QRect(420, 370, 141, 61))
         self.login_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                        "font: 16pt \"Arial\";\n"
-                                        "")
+"font: 16pt \"Arial\";\n"
+"")
         self.login_button.setObjectName("login_button")
         self.parola_label = QtWidgets.QLabel(Form)
         self.parola_label.setGeometry(QtCore.QRect(210, 280, 121, 31))
         self.parola_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                        "font: 87 20pt \"Arial Black\";")
+"font: 87 20pt \"Arial Black\";")
         self.parola_label.setAlignment(QtCore.Qt.AlignCenter)
         self.parola_label.setObjectName("parola_label")
         self.sign_up = QtWidgets.QLabel(Form)
         self.sign_up.setGeometry(QtCore.QRect(440, 470, 111, 31))
         self.sign_up.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                   "font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                   "text-decoration: underline;")
+"font: 75 15pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;")
         self.sign_up.setAlignment(QtCore.Qt.AlignCenter)
         self.sign_up.setObjectName("sign_up")
         self.password_input = QtWidgets.QLineEdit(Form)
         self.password_input.setGeometry(QtCore.QRect(210, 310, 571, 41))
+        self.password_input.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.password_input.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                          "font: 12pt \"Arial\";")
+"font: 12pt \"Arial\";")
+        self.password_input.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password_input.setObjectName("password_input")
         self.username_input = QtWidgets.QLineEdit(Form)
         self.username_input.setGeometry(QtCore.QRect(210, 200, 571, 41))
         self.username_input.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                          "font: 12pt \"Arial\";")
+"font: 12pt \"Arial\";")
         self.username_input.setObjectName("username_input")
         self.cant_access_account = QtWidgets.QLabel(Form)
         self.cant_access_account.setGeometry(QtCore.QRect(420, 530, 151, 21))
         self.cant_access_account.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                               "font: 87 14pt \"Arial Black\";\n"
-                                               "font: 8pt \"MS Shell Dlg 2\";\n"
-                                               "text-decoration: underline;")
+"font: 87 14pt \"Arial Black\";\n"
+"font: 8pt \"MS Shell Dlg 2\";\n"
+"text-decoration: underline;")
         self.cant_access_account.setAlignment(QtCore.Qt.AlignCenter)
         self.cant_access_account.setObjectName("cant_access_account")
         self.username_label = QtWidgets.QLabel(Form)
         self.username_label.setGeometry(QtCore.QRect(200, 150, 201, 51))
         self.username_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                          "font: 87 20pt \"Arial Black\";")
+"font: 87 20pt \"Arial Black\";")
         self.username_label.setAlignment(QtCore.Qt.AlignCenter)
         self.username_label.setObjectName("username_label")
         self.image_background = QtWidgets.QLabel(Form)
         self.image_background.setGeometry(QtCore.QRect(0, 0, 1061, 621))
+        self.image_background.setStyleSheet("background-color: rgb(0, 0, 70);")
         self.image_background.setText("")
         self.image_background.setPixmap(QtGui.QPixmap("C:/Users/cojoc/Downloads/Image1.png"))
         self.image_background.setObjectName("image_background")
@@ -95,7 +98,6 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()

@@ -1,3 +1,5 @@
+import logging
+
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
@@ -63,43 +65,51 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
                     session.close()
                     QMessageBox.about(self, "Achizitionare ore", "Succes")
                     AchizitoneazaOreWindow.hide(self)
-
                     break
 
-        except Exception as e:
-            print(e)
+        except BaseException as e:
+            logging.exception(e)
 
     def populate_tabel(self, data):
         # columns -> 0: instructor, 1: vehicul, 2: nr inmatriculare, 3: cutia vit, 4: ore, 5: pret
-        for idx, row in enumerate(data):
-            self.UI.tableWidget.setItem(idx, 0, QTableWidgetItem(row[2]))
-            self.UI.tableWidget.setItem(idx, 1, QTableWidgetItem(row[3]))
-            self.UI.tableWidget.setItem(idx, 2, QTableWidgetItem(row[4]))
-            self.UI.tableWidget.setItem(idx, 3, QTableWidgetItem(row[5]))
-            self.UI.tableWidget.setItem(idx, 4, QTableWidgetItem(str(row[0])))
-            self.UI.tableWidget.setItem(idx, 5, QTableWidgetItem(str(row[1])))
+        try:
+            for idx, row in enumerate(data):
+                self.UI.tableWidget.setItem(idx, 0, QTableWidgetItem(row[2]))
+                self.UI.tableWidget.setItem(idx, 1, QTableWidgetItem(row[3]))
+                self.UI.tableWidget.setItem(idx, 2, QTableWidgetItem(row[4]))
+                self.UI.tableWidget.setItem(idx, 3, QTableWidgetItem(row[5]))
+                self.UI.tableWidget.setItem(idx, 4, QTableWidgetItem(str(row[0])))
+                self.UI.tableWidget.setItem(idx, 5, QTableWidgetItem(str(row[1])))
+        except BaseException as e:
+            logging.exception(e)
 
     def filter_by_automatRB(self):
-        self.filter_list.clear()
-        self.data_achizitonare.clear()
-        self.get_data()
-        for idx, row in enumerate(self.data_achizitonare):
-            if row[5] == "Automat":
-                self.filter_list.append(row)
-        self.UI.tableWidget.clearContents()
-        self.populate_tabel(self.filter_list)
-        print(self.data_achizitonare)
+        try:
+            self.filter_list.clear()
+            self.data_achizitonare.clear()
+            self.get_data()
+            for idx, row in enumerate(self.data_achizitonare):
+                if row[5] == "Automat":
+                    self.filter_list.append(row)
+            self.UI.tableWidget.clearContents()
+            self.populate_tabel(self.filter_list)
+            print(self.data_achizitonare)
+        except BaseException as e:
+            logging.exception(e)
 
     def filter_by_manualRB(self):
-        self.filter_list.clear()
-        self.data_achizitonare.clear()
-        self.get_data()
-        for idx, row in enumerate(self.data_achizitonare):
-            if row[5] == "Manual":
-                self.filter_list.append(row)
-        print(self.data_achizitonare)
-        self.UI.tableWidget.clearContents()
-        self.populate_tabel(self.filter_list)
+        try:
+            self.filter_list.clear()
+            self.data_achizitonare.clear()
+            self.get_data()
+            for idx, row in enumerate(self.data_achizitonare):
+                if row[5] == "Manual":
+                    self.filter_list.append(row)
+            print(self.data_achizitonare)
+            self.UI.tableWidget.clearContents()
+            self.populate_tabel(self.filter_list)
+        except BaseException as e:
+            logging.exception(e)
 
     def get_data(self):
         try:
@@ -126,8 +136,8 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
                 self.data_achizitonare.append(items)
             print(self.data_achizitonare)
             session.close()
-        except Exception as e:
-            print(e)
+        except BaseException as e:
+            logging.exception(e)
 
     def table_click(self):
         try:
@@ -143,5 +153,5 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
 
             for item in row:
                 self.table_row.append(item)
-        except Exception as e:
-            print(e)
+        except BaseException as e:
+            logging.exception(e)

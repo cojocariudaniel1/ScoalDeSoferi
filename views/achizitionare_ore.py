@@ -14,29 +14,48 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1054, 625)
+        MainWindow.resize(1058, 609)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.image_background = QtWidgets.QLabel(self.centralwidget)
-        self.image_background.setGeometry(QtCore.QRect(-90, -50, 1311, 851))
-        self.image_background.setAutoFillBackground(True)
-        self.image_background.setText("")
-        self.image_background.setPixmap(QtGui.QPixmap("C:/Users/cojoc/Downloads/Image1.png"))
-        self.image_background.setObjectName("image_background")
         self.login_titlu_label = QtWidgets.QLabel(self.centralwidget)
-        self.login_titlu_label.setGeometry(QtCore.QRect(0, -10, 1061, 91))
+        self.login_titlu_label.setGeometry(QtCore.QRect(5, -5, 1061, 91))
         self.login_titlu_label.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 87 25pt \"Arial Black\";")
         self.login_titlu_label.setAlignment(QtCore.Qt.AlignCenter)
         self.login_titlu_label.setObjectName("login_titlu_label")
         self.achizitioneaza_button = QtWidgets.QPushButton(self.centralwidget)
-        self.achizitioneaza_button.setGeometry(QtCore.QRect(610, 510, 211, 71))
+        self.achizitioneaza_button.setGeometry(QtCore.QRect(615, 515, 211, 71))
         self.achizitioneaza_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 16pt \"Arial\";\n"
 "")
         self.achizitioneaza_button.setObjectName("achizitioneaza_button")
+        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(35, 515, 305, 77))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.cutieDeVitezeLayout = QtWidgets.QGridLayout(self.layoutWidget)
+        self.cutieDeVitezeLayout.setContentsMargins(0, 0, 0, 0)
+        self.cutieDeVitezeLayout.setObjectName("cutieDeVitezeLayout")
+        self.automatRB = QtWidgets.QRadioButton(self.layoutWidget)
+        self.automatRB.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 16pt \"Arial\";\n"
+"")
+        self.automatRB.setObjectName("automatRB")
+        self.cutieDeVitezeLayout.addWidget(self.automatRB, 1, 0, 1, 1)
+        self.manualRB = QtWidgets.QRadioButton(self.layoutWidget)
+        self.manualRB.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 16pt \"Arial\";\n"
+"")
+        self.manualRB.setObjectName("manualRB")
+        self.cutieDeVitezeLayout.addWidget(self.manualRB, 1, 1, 1, 1)
+        self.cutie_de_viteza_label = QtWidgets.QLabel(self.layoutWidget)
+        self.cutie_de_viteza_label.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 16pt \"Arial\";\n"
+"")
+        self.cutie_de_viteza_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.cutie_de_viteza_label.setObjectName("cutie_de_viteza_label")
+        self.cutieDeVitezeLayout.addWidget(self.cutie_de_viteza_label, 0, 0, 1, 2, QtCore.Qt.AlignHCenter)
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 80, 1011, 401))
+        self.tableWidget.setGeometry(QtCore.QRect(25, 85, 1011, 401))
         self.tableWidget.setFrameShadow(QtWidgets.QFrame.Raised)
         self.tableWidget.setAutoScrollMargin(10)
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.SelectedClicked)
@@ -102,31 +121,16 @@ class Ui_MainWindow(object):
         self.tableWidget.horizontalHeader().setMinimumSectionSize(60)
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.verticalHeader().setHighlightSections(True)
-        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(30, 510, 305, 77))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.cutieDeVitezeLayout = QtWidgets.QGridLayout(self.layoutWidget)
-        self.cutieDeVitezeLayout.setContentsMargins(0, 0, 0, 0)
-        self.cutieDeVitezeLayout.setObjectName("cutieDeVitezeLayout")
-        self.automatRB = QtWidgets.QRadioButton(self.layoutWidget)
-        self.automatRB.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.automatRB.setObjectName("automatRB")
-        self.cutieDeVitezeLayout.addWidget(self.automatRB, 1, 0, 1, 1)
-        self.manualRB = QtWidgets.QRadioButton(self.layoutWidget)
-        self.manualRB.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.manualRB.setObjectName("manualRB")
-        self.cutieDeVitezeLayout.addWidget(self.manualRB, 1, 1, 1, 1)
-        self.cutie_de_viteza_label = QtWidgets.QLabel(self.layoutWidget)
-        self.cutie_de_viteza_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.cutie_de_viteza_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.cutie_de_viteza_label.setObjectName("cutie_de_viteza_label")
-        self.cutieDeVitezeLayout.addWidget(self.cutie_de_viteza_label, 0, 0, 1, 2, QtCore.Qt.AlignHCenter)
+        self.image_background = QtWidgets.QLabel(self.centralwidget)
+        self.image_background.setGeometry(QtCore.QRect(-15, -45, 1106, 676))
+        self.image_background.setStyleSheet("background-color: rgb(0, 0, 70);")
+        self.image_background.setText("")
+        self.image_background.setObjectName("image_background")
+        self.image_background.raise_()
+        self.login_titlu_label.raise_()
+        self.achizitioneaza_button.raise_()
+        self.layoutWidget.raise_()
+        self.tableWidget.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -137,6 +141,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.login_titlu_label.setText(_translate("MainWindow", "Achizitonare ore"))
         self.achizitioneaza_button.setText(_translate("MainWindow", "Achizitioneaza"))
+        self.automatRB.setText(_translate("MainWindow", "Automat"))
+        self.manualRB.setText(_translate("MainWindow", "Manual"))
+        self.cutie_de_viteza_label.setText(_translate("MainWindow", "Cutie de viteza"))
         self.tableWidget.setSortingEnabled(True)
         item = self.tableWidget.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
@@ -187,9 +194,6 @@ class Ui_MainWindow(object):
         item = self.tableWidget.item(1, 5)
         item.setText(_translate("MainWindow", "100 RON"))
         self.tableWidget.setSortingEnabled(__sortingEnabled)
-        self.automatRB.setText(_translate("MainWindow", "Automat"))
-        self.manualRB.setText(_translate("MainWindow", "Manual"))
-        self.cutie_de_viteza_label.setText(_translate("MainWindow", "Cutie de viteza"))
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'programare.ui'
+# Form implementation generated from reading ui file 'programari_instructor.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,11 +14,47 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1057, 758)
+        MainWindow.resize(800, 642)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.image_background = QtWidgets.QLabel(self.centralwidget)
+        self.image_background.setGeometry(QtCore.QRect(-200, -75, 1061, 711))
+        self.image_background.setStyleSheet("background-color: rgb(0, 0, 70);")
+        self.image_background.setText("")
+        self.image_background.setObjectName("image_background")
+        self.update_table_button = QtWidgets.QPushButton(self.centralwidget)
+        self.update_table_button.setGeometry(QtCore.QRect(35, 550, 141, 41))
+        self.update_table_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: 16pt \"Arial\";\n"
+"")
+        self.update_table_button.setObjectName("update_table_button")
+        self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
+        self.dateEdit.setGeometry(QtCore.QRect(25, 490, 171, 51))
+        self.dateEdit.setStyleSheet("font: 16pt \"Times New Roman\";")
+        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 11, 2), QtCore.QTime(0, 0, 0)))
+        self.dateEdit.setObjectName("dateEdit")
+        self.confirma_ora_button = QtWidgets.QPushButton(self.centralwidget)
+        self.confirma_ora_button.setGeometry(QtCore.QRect(245, 555, 531, 61))
+        self.confirma_ora_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: 16pt \"Arial\";\n"
+"")
+        self.confirma_ora_button.setObjectName("confirma_ora_button")
+        self.title_label = QtWidgets.QLabel(self.centralwidget)
+        self.title_label.setGeometry(QtCore.QRect(75, -30, 671, 101))
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(24)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(10)
+        self.title_label.setFont(font)
+        self.title_label.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 87 24pt \"Arial Black\";")
+        self.title_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.title_label.setWordWrap(True)
+        self.title_label.setObjectName("title_label")
         self.programareTableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.programareTableWidget.setGeometry(QtCore.QRect(10, 120, 901, 411))
+        self.programareTableWidget.setGeometry(QtCore.QRect(30, 65, 721, 411))
         self.programareTableWidget.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
 "gridline-color: #000000; \n"
 "gridline-width: 40px;\n"
@@ -73,67 +109,19 @@ class Ui_MainWindow(object):
         self.programareTableWidget.setItem(1, 1, item)
         self.programareTableWidget.verticalHeader().setVisible(True)
         self.programareTableWidget.verticalHeader().setDefaultSectionSize(75)
-        self.image_background = QtWidgets.QLabel(self.centralwidget)
-        self.image_background.setGeometry(QtCore.QRect(-60, -40, 1251, 901))
-        self.image_background.setAutoFillBackground(False)
-        self.image_background.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.image_background.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.image_background.setLineWidth(2)
-        self.image_background.setText("")
-        self.image_background.setPixmap(QtGui.QPixmap("C:/Users/cojoc/Downloads/Image1.png"))
-        self.image_background.setObjectName("image_background")
-        self.programare_label = QtWidgets.QLabel(self.centralwidget)
-        self.programare_label.setGeometry(QtCore.QRect(170, 10, 671, 101))
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(10)
-        self.programare_label.setFont(font)
-        self.programare_label.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 87 24pt \"Arial Black\";")
-        self.programare_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.programare_label.setWordWrap(True)
-        self.programare_label.setObjectName("programare_label")
-        self.programare_button = QtWidgets.QPushButton(self.centralwidget)
-        self.programare_button.setGeometry(QtCore.QRect(240, 600, 211, 71))
-        self.programare_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.programare_button.setObjectName("programare_button")
-        self.update_table_button = QtWidgets.QPushButton(self.centralwidget)
-        self.update_table_button.setGeometry(QtCore.QRect(50, 620, 141, 41))
-        self.update_table_button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 16pt \"Arial\";\n"
-"")
-        self.update_table_button.setObjectName("update_table_button")
-        self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
-        self.dateEdit.setGeometry(QtCore.QRect(40, 560, 171, 51))
-        self.dateEdit.setStyleSheet("font: 16pt \"Times New Roman\";")
-        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 11, 2), QtCore.QTime(0, 0, 0)))
-        self.dateEdit.setObjectName("dateEdit")
         self.instructor_label = QtWidgets.QLabel(self.centralwidget)
-        self.instructor_label.setGeometry(QtCore.QRect(290, 530, 131, 61))
+        self.instructor_label.setGeometry(QtCore.QRect(245, 480, 131, 61))
         self.instructor_label.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.instructor_label.setObjectName("instructor_label")
         self.instructor_label_s = QtWidgets.QLabel(self.centralwidget)
-        self.instructor_label_s.setGeometry(QtCore.QRect(430, 530, 311, 61))
+        self.instructor_label_s.setGeometry(QtCore.QRect(375, 480, 311, 61))
         self.instructor_label_s.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.instructor_label_s.setText("")
         self.instructor_label_s.setObjectName("instructor_label_s")
-        self.image_background.raise_()
-        self.programareTableWidget.raise_()
-        self.programare_label.raise_()
-        self.programare_button.raise_()
-        self.update_table_button.raise_()
-        self.dateEdit.raise_()
-        self.instructor_label.raise_()
-        self.instructor_label_s.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -142,6 +130,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.update_table_button.setText(_translate("MainWindow", "Update"))
+        self.dateEdit.setDisplayFormat(_translate("MainWindow", "yyyy/M/d"))
+        self.confirma_ora_button.setText(_translate("MainWindow", "Confirma ora efectuata"))
+        self.title_label.setText(_translate("MainWindow", "Programari actuale"))
         self.programareTableWidget.setSortingEnabled(True)
         item = self.programareTableWidget.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
@@ -176,10 +168,6 @@ class Ui_MainWindow(object):
         item = self.programareTableWidget.item(0, 2)
         item.setText(_translate("MainWindow", "1"))
         self.programareTableWidget.setSortingEnabled(__sortingEnabled)
-        self.programare_label.setText(_translate("MainWindow", "Programare"))
-        self.programare_button.setText(_translate("MainWindow", "Programare"))
-        self.update_table_button.setText(_translate("MainWindow", "Update"))
-        self.dateEdit.setDisplayFormat(_translate("MainWindow", "yyyy/M/d"))
         self.instructor_label.setText(_translate("MainWindow", "Instructor: "))
 
 
