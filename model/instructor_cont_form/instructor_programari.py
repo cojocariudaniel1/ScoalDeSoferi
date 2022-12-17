@@ -227,9 +227,9 @@ class InstructorProgramari(QtWidgets.QMainWindow):
                                                                       Programare.ora == ora)
                         cursant = session.query(Cursant).filter(Cursant.id == programari[0].cursant_id).first()
                         update_cursant_ore_disponibile = update(Cursant).where(
-                            Cursant.id == programari[0].cursant_id).values(nr_ore=cursant.nr_ore - 3)
+                            Cursant.id == programari[0].cursant_id).values(nr_ore=cursant.nr_ore - 2)
                         update_cursant_ore_finalizate = update(Cursant).where(
-                            Cursant.id == programari[0].cursant_id).values(ore_finalizate=cursant.ore_finalizate + 3)
+                            Cursant.id == programari[0].cursant_id).values(ore_finalizate=cursant.ore_finalizate + 2)
 
                         programari.delete()
 
