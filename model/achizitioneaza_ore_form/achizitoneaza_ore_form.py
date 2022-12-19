@@ -73,6 +73,7 @@ class AchizitoneazaOreWindow(QtWidgets.QMainWindow):
     def populate_tabel(self, data):
         # columns -> 0: instructor, 1: vehicul, 2: nr inmatriculare, 3: cutia vit, 4: ore, 5: pret
         try:
+            print(data)
             for idx, row in enumerate(data):
                 self.UI.tableWidget.setItem(idx, 0, QTableWidgetItem(row[2]))
                 self.UI.tableWidget.setItem(idx, 1, QTableWidgetItem(row[3]))

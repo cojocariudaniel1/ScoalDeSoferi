@@ -50,31 +50,31 @@ def create_all_function():
     #Creare clase cu datele respective
     # Personal | Nume, prenume
     personal_alexandru1 = Personal("Ghiata", "Anamaria")
-    personal_alexandru1.cont = Cont("personal1", "parola1", 2)
+    personal_alexandru1.cont = Cont("personal1", "parola1", 1)
 
     personal_alexandru2 = Personal("Abaza", "Andreea")
-    personal_alexandru2.cont = Cont("personal2", "parola1", 2)
+    personal_alexandru2.cont = Cont("personal2", "parola1", 1)
 
     personal_pacurari1 = Personal("Hongu", "Cosmin")
-    personal_pacurari1.cont = Cont("personal3", "parola1", 2)
+    personal_pacurari1.cont = Cont("personal3", "parola1", 1)
 
     personal_pacurari2 = Personal("Abaza", "Bianca")
-    personal_pacurari2.cont = Cont("personal4", "parola1", 2)
+    personal_pacurari2.cont = Cont("personal4", "parola1", 1)
 
     personal_nicolina1 = Personal("Raus", "Ana")
-    personal_nicolina1.cont = Cont("personal5", "parola1", 2)
+    personal_nicolina1.cont = Cont("personal5", "parola1", 1)
 
     personal_nicolina2 = Personal("Popescu", "Corina")
-    personal_nicolina2.cont = Cont("personal6", "parola1", 2)
+    personal_nicolina2.cont = Cont("personal6", "parola1", 1)
 
     personal_copou1 = Personal("Macaru", "Iraida")
-    personal_copou1.cont = Cont("personal7", "parola1", 2)
+    personal_copou1.cont = Cont("personal7", "parola1", 1)
 
     personal_copou2 = Personal("Socolenco", "Natalia")
-    personal_copou2.cont = Cont("personal8", "parola1", 2)
+    personal_copou2.cont = Cont("personal8", "parola1", 1)
 
     personal_copou3 = Personal("Gradinaru", "Augustin")
-    personal_copou3.cont = Cont("personal9", "parola1", 2)
+    personal_copou3.cont = Cont("personal9", "parola1", 1)
 
     #Creare clase cu datele respective
     # Vehicul | Marca, model, anFabricatie, instructor.
@@ -142,8 +142,10 @@ def create_all_function():
     sediu_nicolina.address = adress_nicolina
     sediu_copou.address = adress_copou
 
-    personal_adm_cont = Cont("adm1", "parola_adm", 3)
-    personal_adm1 = adaugare_personal_administrativ(PersonalAdministrativ(), personal_adm_cont, personal_copou3)
+    personal_adm_cont1= Cont("adm1", "adm1", 2)
+    personal_adm_cont2= Cont("adm2", "adm2", 2)
+    personal_adm1 = adaugare_personal_administrativ(PersonalAdministrativ(), personal_adm_cont1, personal_alexandru1)
+    personal_adm2 = adaugare_personal_administrativ(PersonalAdministrativ(), personal_adm_cont2, personal_copou1)
 
     # Adaugare programari:
     # '2001-09-28' + 7 → 2001 - 10 - 05
@@ -173,7 +175,7 @@ def create_all_function():
 
         programare1,
 
-        personal_adm_cont, personal_adm1,
+        personal_adm1, personal_adm2,
 
         cursant1, cursant2, cursant4, cursant5, cursant6, cursant7, cursant8, cursant9, cursant10, cursant11, cursant12]
 

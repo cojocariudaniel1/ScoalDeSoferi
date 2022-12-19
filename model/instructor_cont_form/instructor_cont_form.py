@@ -13,9 +13,9 @@ from views.instructor_cont_form import Ui_MainWindow
 
 
 class InstructorContForm(QtWidgets.QMainWindow):
-    def __init__(self, username):
+    def __init__(self, login_window, username):
         super().__init__()
-
+        self.login_window = login_window
         self.new_window = None
         self.UI = Ui_MainWindow()
         self.UI.setupUi(self)
@@ -25,6 +25,7 @@ class InstructorContForm(QtWidgets.QMainWindow):
         self.timer.timeout.connect(self.Time)
         self.timer.start(2000)
         self.UI.programari_button.clicked.connect(self.programari_button)
+        self.UI.log_out_2.clicked.connect(self.log_out)
 
     def programari_button(self):
         self.new_window = InstructorProgramari(self.username)
@@ -47,6 +48,10 @@ class InstructorContForm(QtWidgets.QMainWindow):
             #     self.UI.programare_button.setDisabled(True)
         except Exception as e:
             print(e)
+
+    def log_out(self):
+        InstructorContForm.hide(self)
+        self.login_window.show()
 
     def get_info(self, username):
         session = Session()

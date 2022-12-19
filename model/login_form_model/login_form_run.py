@@ -4,6 +4,7 @@ from PyQt5 import QtWidgets
 
 from base import Session
 from cont import Cont
+from model.administrator_account_edit.administrator_account_form import AdministratorAccountManage
 from model.instructor_cont_form.instructor_cont_form import InstructorContForm
 from model.user_account_form.user_form_run import ContWindow
 from views.login_form_view import Ui_Form
@@ -13,6 +14,7 @@ class LoginWndow(QtWidgets.QWidget):
 
     def __init__(self):
         super().__init__()
+        self.login_window = None
         self.new_window = None
         self.ui_loginForm = Ui_Form()
         self.ui_loginForm.setupUi(self)
@@ -35,11 +37,18 @@ class LoginWndow(QtWidgets.QWidget):
                 for cont in query:
                     if cont.nivel_cont == 0:
                         LoginWndow.hide(self)
-                        self.new_window = ContWindow(username)
+                        self.login_window = LoginWndow()
+                        self.new_window = ContWindow(self.login_window, username)
                         self.new_window.show()
                     elif cont.nivel_cont == 1:
+                        self.login_window = LoginWndow()
                         LoginWndow.hide(self)
-                        self.new_window = InstructorContForm(username)
+                        self.new_window = InstructorContForm(self.login_window, username)
+                        self.new_window.show()
+                    elif cont.nivel_cont == 2:
+                        self.login_window = LoginWndow()
+                        LoginWndow.hide(self)
+                        self.new_window = AdministratorAccountManage(self.login_window)
                         self.new_window.show()
             else:
                 print("Failed")
