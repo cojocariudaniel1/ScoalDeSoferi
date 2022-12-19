@@ -42,6 +42,16 @@ class AdministratorAccountManage(QtWidgets.QMainWindow):
                 session.execute(cont)
             session.commit()
             session.close()
+            self.UI.tableWidget.clearContents()
+            self.UI.tableWidget.clear()
+            self.UI.tableWidget.clearSelection()
+            self.UI.tableWidget.reset()
+            self.UI.tableWidget.clearContents()
+            self.data.clear()
+            self.table_row.clear()
+            self.row_deleted.clear()
+            self.get_data()
+            self.populate_table()
         except BaseException as e:
             logging.exception(e)
 
@@ -74,8 +84,8 @@ class AdministratorAccountManage(QtWidgets.QMainWindow):
         self.UI.tableWidget.clear()
         self.UI.tableWidget.clearSelection()
         self.UI.tableWidget.reset()
-        self.populate_table()
         self.data.clear()
+        self.populate_table()
 
 
     def table_click(self):
